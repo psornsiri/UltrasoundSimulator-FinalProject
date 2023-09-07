@@ -1,0 +1,539 @@
+[version]
+Signature = "$Windows NT$"
+Class = FDUSBDevices
+ClassGUID = {1CC90871-628A-47c8-BEE3-F8F3BF151A60}
+Provider = %ProviderName%
+CatalogFile=fdhusb.cat
+DriverVer = 01/18/2022,3.15.00.01
+
+[DefaultInstall]
+CopyINF = fdhusb.inf
+
+
+; ======== Class =========
+
+[ClassInstall32]
+Addreg = FDUSBDevices_AddReg
+
+[FDUSBDevices_AddReg]
+HKR,,,,%ClassName%
+HKR,,NoInstallClass,,1
+HKR,,IconPath,%REG_MULTI_SZ%,"%systemroot%\system32\setupapi.dll,-20"
+HKR,,LowerLogoVersion,,5.2
+
+
+; ======== Manufacturer/Models =========
+
+[Manufacturer]
+%ProviderName% = FDUSBDevice,NTx86,NTamd64
+%ProviderName% = FDDLR1GDevice,NTx86,NTamd64
+%ProviderName% = FDDELTAXDevice,NTx86,NTamd64
+%ProviderName% = FDOMEGAXDevice,NTx86,NTamd64
+%ProviderName% = FDSIGMAXDevice,NTx86,NTamd64
+%ProviderName% = FDLAMBDAXDevice,NTx86,NTamd64
+%ProviderName% = FDControlDevice,NTx86,NTamd64
+%ProviderName% = FDCustomDevice,NTx86,NTamd64
+%ProviderName% = MPR1Device,NTx86,NTamd64
+%ProviderName% = XTHDevice,NTx86,NTamd64
+%ProviderName% = JHD1Device,NTx86,NTamd64
+%ProviderName% = EHD1Device,NTx86,NTamd64
+%ProviderName% = VIC1Device,NTx86,NTamd64
+%ProviderName% = RFD1Device,NTx86,NTamd64
+%ProviderName% = MMD1Device,NTx86,NTamd64
+%ProviderName% = RNV1Device,NTx86,NTamd64
+%ProviderName% = VCS1Device,NTx86,NTamd64
+%ProviderName% = FalconDevice,NTx86,NTamd64
+
+[FDUSBDevice.NTx86]
+%USB\FDUSBDevice.DeviceDesc%  = FD_Install, USB\VID_1451&PID_0301
+
+[FDUSBDevice.NTamd64]
+%USB\FDUSBDevice.DeviceDesc%  = FD_Install, USB\VID_1451&PID_0301
+
+[FDDLR1GDevice.NTx86]
+%USB\FDDLR1GDevice.DeviceDesc%  = DLR1G_Install, USB\VID_1451&PID_0302
+
+[FDDLR1GDevice.NTamd64]
+%USB\FDDLR1GDevice.DeviceDesc%  = DLR1G_Install, USB\VID_1451&PID_0302
+
+[FDDELTAXDevice.NTx86]
+%USB\FDDELTAXDevice.DeviceDesc%  = DELTAX_Install, USB\VID_1451&PID_0401
+
+[FDDELTAXDevice.NTamd64]
+%USB\FDDELTAXDevice.DeviceDesc%  = DELTAX_Install, USB\VID_1451&PID_0401
+
+[FDOMEGAXDevice.NTx86]
+%USB\FDOMEGAXDevice.DeviceDesc%  = OMEGAX_Install, USB\VID_1451&PID_0402
+
+[FDOMEGAXDevice.NTamd64]
+%USB\FDOMEGAXDevice.DeviceDesc%  = OMEGAX_Install, USB\VID_1451&PID_0402
+
+[FDSIGMAXDevice.NTx86]
+%USB\FDSIGMAXDevice.DeviceDesc%  = SIGMAX_Install, USB\VID_1451&PID_0403
+
+[FDSIGMAXDevice.NTamd64]
+%USB\FDSIGMAXDevice.DeviceDesc%  = SIGMAX_Install, USB\VID_1451&PID_0403
+
+[FDLAMBDAXDevice.NTx86]
+%USB\FDLAMBDAXDevice.DeviceDesc%  = LAMBDAX_Install, USB\VID_1451&PID_040C
+
+[FDLAMBDAXDevice.NTamd64]
+%USB\FDLAMBDAXDevice.DeviceDesc%  = LAMBDAX_Install, USB\VID_1451&PID_040C
+
+[FDControlDevice.NTx86]
+%USB\FDControlDevice.DeviceDesc%  = Control_Install, USB\VID_1451&PID_0404
+
+[FDControlDevice.NTamd64]
+%USB\FDControlDevice.DeviceDesc%  = Control_Install, USB\VID_1451&PID_0404
+
+[FDCustomDevice.NTx86]
+%USB\FDCustomDevice.DeviceDesc%  = Custom_Install, USB\VID_1451&PID_0400
+
+[FDCustomDevice.NTamd64]
+%USB\FDCustomDevice.DeviceDesc%  = Custom_Install, USB\VID_1451&PID_0400
+
+[MPR1Device.NTx86]
+%USB\MPR1Device.DeviceDesc%  = MPR1_Install, USB\VID_1451&PID_0406
+
+[MPR1Device.NTamd64]
+%USB\MPR1Device.DeviceDesc%  = MPR1_Install, USB\VID_1451&PID_0406
+
+[XTHDevice.NTx86]
+%USB\XTHDevice.DeviceDesc%  = XTH_Install, USB\VID_1451&PID_0407
+
+[XTHDevice.NTamd64]
+%USB\XTHDevice.DeviceDesc%  = XTH_Install, USB\VID_1451&PID_0407
+
+[JHD1Device.NTx86]
+%USB\JHD1Device.DeviceDesc%  = JHD1_Install, USB\VID_1451&PID_0408
+
+[JHD1Device.NTamd64]
+%USB\JHD1Device.DeviceDesc%  = JHD1_Install, USB\VID_1451&PID_0408
+
+[EHD1Device.NTx86]
+%USB\EHD1Device.DeviceDesc%  = EHD1_Install, USB\VID_1451&PID_0409
+
+[EHD1Device.NTamd64]
+%USB\EHD1Device.DeviceDesc%  = EHD1_Install, USB\VID_1451&PID_0409
+
+[VIC1Device.NTx86]
+%USB\VIC1Device.DeviceDesc%  = VIC1_Install, USB\VID_1451&PID_040A
+
+[VIC1Device.NTamd64]
+%USB\VIC1Device.DeviceDesc%  = VIC1_Install, USB\VID_1451&PID_040A
+
+[RFD1Device.NTx86]
+%USB\RFD1Device.DeviceDesc%  = RFD1_Install, USB\VID_1451&PID_040B
+
+[RFD1Device.NTamd64]
+%USB\RFD1Device.DeviceDesc%  = RFD1_Install, USB\VID_1451&PID_040B
+
+[MMD1Device.NTx86]
+%USB\MMD1Device.DeviceDesc%  = MMD1_Install, USB\VID_1451&PID_040D
+
+[MMD1Device.NTamd64]
+%USB\MMD1Device.DeviceDesc%  = MMD1_Install, USB\VID_1451&PID_040D
+
+[RNV1Device.NTx86]
+%USB\RNV1Device.DeviceDesc%  = RNV1_Install, USB\VID_1451&PID_040E
+
+[RNV1Device.NTamd64]
+%USB\RNV1Device.DeviceDesc%  = RNV1_Install, USB\VID_1451&PID_040E
+
+[VCS1Device.NTx86]
+%USB\VCS1Device.DeviceDesc%  = VCS1_Install, USB\VID_1451&PID_040F
+
+[VCS1Device.NTamd64]
+%USB\VCS1Device.DeviceDesc%  = VCS1_Install, USB\VID_1451&PID_040F
+
+[FalconDevice.NTx86]
+%USB\FalconDevice.DeviceDesc% = Falcon_Install, USB\VID_0403&PID_CB48
+
+[FalconDevice.NTamd64]
+%USB\FalconDevice.DeviceDesc% = Falcon_Install, USB\VID_0403&PID_CB48
+
+
+; ======== Installation (GEN1) =========
+
+[FD_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[FD_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[FD_Install.HW]
+AddReg = FD_AddReg
+
+[FD_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{2CB18443-03BE-4670-81B5-FAD913E9B259}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (DLR1G) =========
+
+[DLR1G_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[DLR1G_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[DLR1G_Install.HW]
+AddReg = DLR1G_AddReg
+
+[DLR1G_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{47B90960-DA0C-4834-8A27-2FCC77CD15FD}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (DELTAX) =========
+
+[DELTAX_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[DELTAX_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[DELTAX_Install.HW]
+AddReg = DELTAX_AddReg
+
+[DELTAX_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{1DB47A9D-F76E-4443-B6BC-1BCE12ABDDE5}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (OMEGAX) =========
+
+[OMEGAX_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[OMEGAX_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[OMEGAX_Install.HW]
+AddReg = OMEGAX_AddReg
+
+[OMEGAX_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{59ADCFC9-BDB8-4604-B2A9-4EDB79592A87}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (SIGMAX) =========
+
+[SIGMAX_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[SIGMAX_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[SIGMAX_Install.HW]
+AddReg = SIGMAX_AddReg
+
+[SIGMAX_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{CDD61F0C-225E-48c6-BEDB-D3B78F8F6D1C}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (LAMBDA) =========
+
+[LAMBDAX_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[LAMBDAX_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[LAMBDAX_Install.HW]
+AddReg = LAMBDAX_AddReg
+
+[LAMBDAX_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{8A56228A-673C-49E8-80B8-7CDF26E9A358}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (Control) =========
+
+[Control_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[Control_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[Control_Install.HW]
+AddReg = Control_AddReg
+
+[Control_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{DA0DD9CD-EBA8-40e3-9184-02D5F4F66C6E}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (Custom) =========
+
+[Custom_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[Custom_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[Custom_Install.HW]
+AddReg = Custom_AddReg
+
+[Custom_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{DE4B3635-B0B4-48ec-AA79-D41D965677AA}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (MPR1) =========
+
+[MPR1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[MPR1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[MPR1_Install.HW]
+AddReg = MPR1_AddReg
+
+[MPR1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{137BC790-F259-46df-946A-57F3C66CB273}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (XTH) =========
+
+[XTH_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[XTH_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[XTH_Install.HW]
+AddReg = XTH_AddReg
+
+[XTH_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{8A9F78F7-2E38-406A-9F5A-6CFE24807065}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (JHD1) =========
+
+[JHD1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[JHD1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[JHD1_Install.HW]
+AddReg = JHD1_AddReg
+
+[JHD1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{1E442525-DC45-489E-8536-F915B3D07E12}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (EHD1) =========
+
+[EHD1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[EHD1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[EHD1_Install.HW]
+AddReg = EHD1_AddReg
+
+[EHD1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{C06A4F0D-6CA8-406A-A5D2-20303CD31F31}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (VIC1) =========
+
+[VIC1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[VIC1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[VIC1_Install.HW]
+AddReg = VIC1_AddReg
+
+[VIC1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{EDA6E8FB-19C7-4D7B-81A4-B3247264B379}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (RFD1) =========
+
+[RFD1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[RFD1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[RFD1_Install.HW]
+AddReg = RFD1_AddReg
+
+[RFD1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{4C8819C1-C09F-45C5-910B-4435C9062D0A}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (MMD1) =========
+
+[MMD1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[MMD1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[MMD1_Install.HW]
+AddReg = MMD1_AddReg
+
+[MMD1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{262F9F25-FDC6-4DA8-8920-854D6960E295}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (RNV1) =========
+
+[RNV1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[RNV1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[RNV1_Install.HW]
+AddReg = RNV1_AddReg
+
+[RNV1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{795F8A33-C3E0-4A84-818F-0DB69868D817}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (VCS1) =========
+
+[VCS1_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[VCS1_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[VCS1_Install.HW]
+AddReg = VCS1_AddReg
+
+[VCS1_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{96DCDA94-7870-11EC-90D6-0242AC120003}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Installation (FALCON) =========
+
+[Falcon_Install]
+Include       = winusb.inf
+Needs         = WINUSB.NT
+
+[Falcon_Install.Services]
+Include       = winusb.inf
+Needs         = WINUSB.NT.Services
+
+[Falcon_Install.HW]
+AddReg = Falcon_AddReg
+
+[Falcon_AddReg]
+HKR,,DeviceInterfaceGUIDs,0x10000,"{CB5DAA55-DC1A-4f2d-8F76-14CEE032832A}"
+HKR,,SurpriseRemovalOK,0x00010001,1
+HKR,,Removable,0x00010001,1
+HKR,,RemovalPolicy,0x00010001,3
+
+
+; ======== Strings =========
+
+[Strings]
+ProviderName = "Force Dimension"
+USB\FDUSBDevice.DeviceDesc = "Force Dimension Haptic Device"
+USB\FDDLR1GDevice.DeviceDesc = "Force Dimension DLR Device (1G)"
+USB\FalconDevice.DeviceDesc = "Force Dimension Falcon"
+USB\FDDELTAXDevice.DeviceDesc = "Force Dimension delta.x"
+USB\FDOMEGAXDevice.DeviceDesc = "Force Dimension omega.x"
+USB\FDSIGMAXDevice.DeviceDesc = "Force Dimension sigma.7"
+USB\FDLAMBDAXDevice.DeviceDesc = "Force Dimension lambda.7"
+USB\FDControlDevice.DeviceDesc = "Force Dimension Controller"
+USB\FDCustomDevice.DeviceDesc = "Force Dimension Custom Device"
+USB\MPR1Device.DeviceDesc = "Force Dimension MPR1"
+USB\XTHDevice.DeviceDesc = "Force Dimension XTH"
+USB\JHD1Device.DeviceDesc = "Force Dimension JHD1"
+USB\EHD1Device.DeviceDesc = "Force Dimension EHD1"
+USB\VIC1Device.DeviceDesc = "Force Dimension VIC1"
+USB\RFD1Device.DeviceDesc = "Force Dimension RFD1"
+USB\MMD1Device.DeviceDesc = "Force Dimension MMD1"
+USB\RNV1Device.DeviceDesc = "Force Dimension RNV1"
+USB\VCS1Device.DeviceDesc = "Force Dimension VCS1"
+WinUSB_SvcDesc = "Force Dimension USB Service"
+ClassName = "USB Haptic Devices"
