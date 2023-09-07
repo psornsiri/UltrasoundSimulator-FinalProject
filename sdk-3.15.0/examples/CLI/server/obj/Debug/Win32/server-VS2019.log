@@ -1,0 +1,11 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (obj/Debug/Win32/) contains files shared from another project (center.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  server.cpp
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(68,12): warning C4101: 'res': unreferenced local variable
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,20): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,35): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,50): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,65): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,80): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(437,95): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\examples\CLI\server\server.cpp(281): warning C4715: 'returnPose': not all control paths return a value
+  server-VS2019.vcxproj -> C:\Users\Sornsiri\Desktop\UCL\sdk-3.15.0\bin\server.exe
