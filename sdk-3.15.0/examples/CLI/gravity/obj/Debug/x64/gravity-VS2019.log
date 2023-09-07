@@ -1,0 +1,17 @@
+﻿  autocenter.cpp
+gravity.obj : error LNK2005: main already defined in autocenter.obj
+autocenter.obj : error LNK2019: unresolved external symbol drdOpen referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdClose referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdIsSupported referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdIsInitialized referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdAutoInit referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdStart referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdRegulatePos referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdRegulateRot referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdRegulateGrip referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdMoveToPos referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdMoveToRot referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdMoveToGrip referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdMoveTo referenced in function main
+autocenter.obj : error LNK2019: unresolved external symbol drdStop referenced in function main
+..\..\..\bin\gravity.exe : fatal error LNK1120: 14 unresolved externals
