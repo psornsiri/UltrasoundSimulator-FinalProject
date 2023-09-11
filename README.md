@@ -7,4 +7,5 @@ Server Application:
 * sdk-3.15.0/examples/CLI/drd-CLI-VS2019.sln
 
 Project Demo
-https://github.com/psornsiri/UltrasoundSimulator-FinalProject/assets/127424423/1b4897fd-4764-48fc-94f5-e6ffeb344d55
+
+https://github.com/psornsiri/UltrasoundSimulator-FinalProject/assets/127424423/e95fdd9e-d9ee-44b6-8356-f57567e3bee9
