@@ -11,7 +11,7 @@ public class StartMenuScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SocketConnection();
+        //SocketConnection();
     }
 
     public void SocketConnection()
