@@ -26,13 +26,19 @@ public class LogicScript : MonoBehaviour
     private double score;
     private string distX, distY, distZ;
     StreamWriter writer;
+    private float timeCSV;
+    public float hitPoint;
+
+    private SocketClient socket;
 
     // Start is called before the first frame update
     void Start()
     {
-        writer = new StreamWriter(Application.dataPath + "/Gaming/Experiments/scoring_translation.csv");
-        //writer.WriteLine("Final Score" + "," + "x" + "," + "y" + "," + "z");
-        writer.WriteLine("Final Score" + "," + "Translation Score" + "," + "Rotation Score" + "," + "Translation" + "," + "Rotation");
+        socket = GameObject.FindGameObjectWithTag("Client").GetComponent<SocketClient>();
+
+        writer = new StreamWriter(Application.dataPath + "/Gaming/Experiments/stiffness_50.csv");
+        writer.WriteLine("Final Score" + "," + "x" + "," + "y" + "," + "z" + "," + "belly" + "," + "Time");
+        //writer.WriteLine("Final Score" + "," + "Translation Score" + "," + "Rotation Score" + "," + "Translation" + "," + "Rotation");
     }
 
     // Update is called once per frame
@@ -53,7 +59,7 @@ public class LogicScript : MonoBehaviour
         
         scoreText.text = "Score: " + (100 * score).ToString("N2");
 
-        if ((score > 1.90) && (targetComplete != true))
+        if ((score > 0.80) && (targetComplete != true))
         {
             successScreen.SetActive(true);
             resetButton.SetActive(true);
@@ -80,9 +86,9 @@ public class LogicScript : MonoBehaviour
         double scoreRotation = NormalizeData(deltaRotation, 0, 90);
         double scoreToDisplay = 0.5 * scoreRotation + 0.5 * scoreTranslation;
         //Debug.Log("Translation: " + deltaTranslation);
-        Debug.Log("Rotation: " + deltaRotation);
+        //Debug.Log("Rotation: " + deltaRotation);
         //Debug.Log("Translation Score: " + scoreTranslation);
-        Debug.Log("Rotation Score: " + scoreRotation);
+        //Debug.Log("Rotation Score: " + scoreRotation);
 
         double posTranslation = NormalizeData(deltaTranslation, 0.6, 0);
         if (P.transform.position.z > -2.6)
@@ -101,8 +107,9 @@ public class LogicScript : MonoBehaviour
 
         if (writeCSV)
         {
-            //writer.WriteLine(scoreToDisplay.ToString() + "," + P.transform.position.x.ToString() + "," + P.transform.position.y.ToString() + "," + P.transform.position.z.ToString());
-            writer.WriteLine(scoreToDisplay.ToString() + "," + scoreTranslation.ToString() + "," + scoreRotation.ToString() + "," + posTranslation.ToString() + "," + rotRotation.ToString());
+            timeCSV += Time.deltaTime;
+            writer.WriteLine(scoreToDisplay.ToString() + "," + P.transform.position.x.ToString() + "," + P.transform.position.y.ToString() + "," + P.transform.position.z.ToString() + "," + hitPoint.ToString() + ","+ timeCSV.ToString()); ;
+            //writer.WriteLine(scoreToDisplay.ToString() + "," + scoreTranslation.ToString() + "," + scoreRotation.ToString() + "," + posTranslation.ToString() + "," + rotRotation.ToString());
             writer.Flush();
             //writer.Close();
         }
