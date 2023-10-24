@@ -20,6 +20,8 @@ public class SocketClient : MonoBehaviour
     public bool pos2, pos3, pos4 = false;
     public bool message = false;
 
+    private LogicScript logic;
+
     // Define a concurrent queue to store received pose values
     private ConcurrentQueue<(Vector3 position, Vector3 rotation)> poseQueue = new ConcurrentQueue<(Vector3, Vector3)>();
 
@@ -28,9 +30,11 @@ public class SocketClient : MonoBehaviour
     void Start()
     {
         // Create and start a new thread for the socket connection to avoid blocking the main thread
-        //clientThread = new Thread(ConnectToServer);
-        //clientThread.IsBackground = true;
-        //clientThread.Start();
+        clientThread = new Thread(ConnectToServer);
+        clientThread.IsBackground = true;
+        clientThread.Start();
+
+        logic = GameObject.FindGameObjectWithTag("Logic").GetComponent<LogicScript>();
     }
 
     void ConnectToServer()
@@ -89,7 +93,7 @@ public class SocketClient : MonoBehaviour
 
                     poseQueue.Enqueue((pos_vect, rot_vect));
 
-                    Debug.Log($"p ({pos_vect.x}, {pos_vect.y}, {pos_vect.z}) | r ({rotX}, {rotY}, {rotZ})");
+                    //Debug.Log($"p ({pos_vect.x}, {pos_vect.y}, {pos_vect.z}) | r ({rotX}, {rotY}, {rotZ})");
                     //Debug.Log($"p ({posX}, {posY}, {posZ}) | r ({rotX}, {rotY}, {rotZ})");
                     //Debug.Log($"p ({posX}, {posY}, {posZ}) | r ({rotX}, {rotY}, {rotZ}) | f ({forceX}, {forceY}, {forceZ})");
                 }
@@ -118,11 +122,12 @@ public class SocketClient : MonoBehaviour
             message = false;
         }
 
-        //if (touchBelly)
-        //{
-        //    transform.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
-        //    posBelly = transform.localPosition.z;
-        //}
+        if (touchBelly)
+        {
+            //transform.GetComponent<Rigidbody>().velocity = new Vector3(0f, 0f, 0f);
+            //posBelly = transform.localPosition.z;
+            //SendData((float)0.08);
+        }
     }
 
     void FixedUpdate()
@@ -153,13 +158,13 @@ public class SocketClient : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        touchBelly = true;
+        //touchBelly = true;
         //posBelly = transform.localPosition.z;
     }
 
     private void OnCollisionExit(Collision collision)
     {
-        touchBelly = false;
+        //touchBelly = false;
     }
 
     // Send haptic feedback to the server
