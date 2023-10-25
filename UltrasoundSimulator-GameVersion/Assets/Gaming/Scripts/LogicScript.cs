@@ -15,6 +15,7 @@ public class LogicScript : MonoBehaviour
 
     public Text positionText;
     public Text scoreText;
+    public Text scoreDisplay;
     public Text timerText;
 
     public GameObject currentPlane;
@@ -36,8 +37,8 @@ public class LogicScript : MonoBehaviour
     {
         socket = GameObject.FindGameObjectWithTag("Client").GetComponent<SocketClient>();
 
-        writer = new StreamWriter(Application.dataPath + "/Gaming/Experiments/stiffness_50.csv");
-        writer.WriteLine("Final Score" + "," + "x" + "," + "y" + "," + "z" + "," + "belly" + "," + "Time");
+        //writer = new StreamWriter(Application.dataPath + "/Gaming/Experiments/stiffness_50.csv");
+        //writer.WriteLine("Final Score" + "," + "x" + "," + "y" + "," + "z" + "," + "belly" + "," + "Time");
         //writer.WriteLine("Final Score" + "," + "Translation Score" + "," + "Rotation Score" + "," + "Translation" + "," + "Rotation");
     }
 
@@ -58,6 +59,7 @@ public class LogicScript : MonoBehaviour
         }
         
         scoreText.text = "Score: " + (100 * score).ToString("N2");
+        scoreDisplay.text = (100 * score).ToString("N2");
 
         if ((score > 0.80) && (targetComplete != true))
         {
